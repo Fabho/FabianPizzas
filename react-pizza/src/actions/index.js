@@ -11,3 +11,30 @@ export const getToppings = () => async dispatch => {
 
   dispatch({ type: 'GET_TOPPINGS', payload: toppings});
 };
+
+export const deleteTopping = (toppingId) => async dispatch => {
+    
+    const response = await axios.delete(`http://localhost:63764/api/Toppings/${toppingId}`);
+    window.location.reload();
+
+};
+
+export const deletePizza = (pizzaId) => async dispatch => {
+    
+    const response = await axios.delete(`http://localhost:63764/api/Pizzas/${pizzaId}`);
+    window.location.reload();
+
+};
+
+export const getPizzas = () => async dispatch => {
+
+    const response = await axios.get(`http://localhost:63764/api/Pizzas`);
+    let pizzas = [];
+  
+    if(response.status == 200){
+      pizzas =  response.data;
+    }
+  
+    dispatch({ type: 'GET_PIZZAS', payload: pizzas});
+};
+  

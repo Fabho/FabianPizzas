@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { connect } from 'react-redux';
 import {
     BrowserRouter as Router,
@@ -8,7 +7,7 @@ import {
     Link
 } from "react-router-dom";
 
-import {getToppings} from "../actions";
+import {getToppings, deleteTopping} from "../actions";
 
 class Toppings extends React.Component {
     
@@ -26,7 +25,11 @@ class Toppings extends React.Component {
           return (
                 <li key={`topping-${item.ToppingID}`} className="list-group-item d-flex justify-content-between align-items-center">
                     {item.Name}
-                    <button type="button" className="btn btn-primary">Details</button>
+                    <button  type="button" 
+                             className="btn btn-danger"  
+                             onClick={() => this.props.deleteTopping(item.ToppingID)}>
+                                 Delete
+                    </button>
                 </li>
           );
         });
@@ -36,6 +39,7 @@ class Toppings extends React.Component {
         return(
             <div className="container">
                 <h2>List of Toppings</h2>
+                <button type="button" className="btn btn-light">Add new Topping</button>
                 <ul className="list-group">
                     {this.renderList()}
                 </ul>
@@ -48,4 +52,4 @@ const mapStateToProps  = (state) => {
     return {toppings: state.toppingsReducer};
 }
 
-export default connect(mapStateToProps, {getToppings}) (Toppings);
+export default connect(mapStateToProps, {getToppings, deleteTopping}) (Toppings);
