@@ -51,6 +51,10 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,6 +64,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -87,6 +94,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="react-pizza\.gitignore" />
+    <Content Include="react-pizza\public\favicon.ico" />
+    <Content Include="react-pizza\public\index.html" />
+    <Content Include="react-pizza\public\logo192.png" />
+    <Content Include="react-pizza\public\logo512.png" />
+    <Content Include="react-pizza\public\robots.txt" />
+    <Content Include="react-pizza\src\App.css" />
+    <Content Include="react-pizza\src\App.js" />
+    <Content Include="react-pizza\src\App.test.js" />
+    <Content Include="react-pizza\src\index.css" />
+    <Content Include="react-pizza\src\index.js" />
+    <Content Include="react-pizza\src\logo.svg" />
+    <Content Include="react-pizza\src\serviceWorker.js" />
+    <Content Include="react-pizza\src\setupTests.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +123,10 @@
     <Compile Include="Migrations\202005171402338_Initial.Designer.cs">
       <DependentUpon>202005171402338_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005171433404_Initial1.cs" />
+    <Compile Include="Migrations\202005171433404_Initial1.Designer.cs">
+      <DependentUpon>202005171433404_Initial1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Pizza.cs" />
@@ -110,6 +135,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="react-pizza\package-lock.json" />
+    <Content Include="react-pizza\package.json" />
+    <Content Include="react-pizza\public\manifest.json" />
+    <Content Include="react-pizza\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -123,6 +152,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005171402338_Initial.resx">
       <DependentUpon>202005171402338_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005171433404_Initial1.resx">
+      <DependentUpon>202005171433404_Initial1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

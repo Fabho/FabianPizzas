@@ -8,12 +8,14 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using FabianPizzas.Data;
 using FabianPizzas.Models;
 
 namespace FabianPizzas.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ToppingsController : ApiController
     {
         private FabianPizzasContext db = new FabianPizzasContext();
