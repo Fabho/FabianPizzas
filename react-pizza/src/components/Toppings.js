@@ -1,11 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import { Route , withRouter } from 'react-router-dom';
 
 import {getToppings, deleteTopping} from "../actions";
 
@@ -35,11 +30,15 @@ class Toppings extends React.Component {
         });
     }
 
+    goToAddTopping= () =>{
+        this.props.history.push('/addTopping')
+    }
+
     render() {
         return(
             <div className="container">
                 <h2>List of Toppings</h2>
-                <button type="button" className="btn btn-light">Add new Topping</button>
+                <button type="button" className="btn btn-light" onClick={this.goToAddTopping}>Add new Topping</button>
                 <ul className="list-group">
                     {this.renderList()}
                 </ul>
@@ -52,4 +51,4 @@ const mapStateToProps  = (state) => {
     return {toppings: state.toppingsReducer};
 }
 
-export default connect(mapStateToProps, {getToppings, deleteTopping}) (Toppings);
+export default connect(mapStateToProps, {getToppings, deleteTopping}) (withRouter(Toppings));

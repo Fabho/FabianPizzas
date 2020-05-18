@@ -11,6 +11,7 @@ import {
 import Pizzas from './Pizzas';
 import Toppings from './Toppings';
 import Home from './Home';
+import AddTopping from './AddTopping';
 import reducers from '../reducers';
 
 const store = createStore(reducers, applyMiddleware(thunk));
@@ -37,6 +38,9 @@ export default function App() {
                         </Route>
                         <Route path="/pizzas" component={Pizzas}>
                             <Pizzas />
+                        </Route>
+                        <Route path="/addTopping" component={AddTopping}>
+                            <AddTopping />
                         </Route>
                         <Route path="/toppings" component={Toppings}>
                             <Toppings />
