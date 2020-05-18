@@ -1,12 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
-
+import { withRouter } from 'react-router-dom';
 import {getPizzas, deletePizza} from "../actions";
 
 class Pizzas extends React.Component {
@@ -20,6 +14,10 @@ class Pizzas extends React.Component {
         console.log(this.props)
     }
 
+    goToAddPizza= () =>{
+        this.props.history.push('/addPizza')
+    }
+    
     renderList = () => {
         if(this.props.pizzas.length == 0) return <div>No Entries</div>;
 
@@ -51,6 +49,7 @@ class Pizzas extends React.Component {
         return(
             <div className="container">
                 <h2>Pizzas!</h2>
+                <button type="button" className="btn btn-light" onClick={this.goToAddPizza}>Add new Pizza</button>
                 <ul className="list-group">
                     {this.renderList()}
                 </ul>
@@ -63,4 +62,4 @@ const mapStateToProps  = (state) => {
     return {pizzas: state.pizzasReducer};
 }
 
-export default connect(mapStateToProps, {getPizzas, deletePizza}) (Pizzas);
+export default connect(mapStateToProps, {getPizzas, deletePizza}) (withRouter(Pizzas));

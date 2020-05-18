@@ -26,10 +26,22 @@ export const saveTopping = (name, id) => async dispatch => {
         "name": name
     });
     console.log(response)
-    //window.location.reload();
+    window.location = window.location.origin + window.location.pathname
 
 };
 
+export const savePizza = (name, id, toppings) => async dispatch => {
+    
+    const response = await axios.post(`http://localhost:63764/api/Pizzas`,{
+        "PizzaID": id,
+        "Name": name,
+        "Toppings": toppings 
+    });
+
+    console.log(response)
+    window.location = window.location.origin + window.location.pathname
+
+};
 
 export const deletePizza = (pizzaId) => async dispatch => {
     
