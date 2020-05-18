@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="start_app_data.txt" />
     <Content Include="index.html" />
     <Content Include="react-pizza\.gitignore" />
     <Content Include="react-pizza\public\favicon.ico" />
@@ -120,11 +121,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005172347327_Initial.cs" />
-    <Compile Include="Migrations\202005172347327_Initial.Designer.cs">
-      <DependentUpon>202005172347327_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Pizza.cs" />
     <Compile Include="Models\Topping.cs" />
@@ -145,11 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202005172347327_Initial.resx">
-      <DependentUpon>202005172347327_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
