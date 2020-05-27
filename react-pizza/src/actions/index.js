@@ -22,7 +22,6 @@ export const deleteTopping = (toppingId) => async dispatch => {
 export const saveTopping = (name, id) => async dispatch => {
     
     const response = await axios.post(`http://localhost:63764/api/Toppings`,{
-        "ToppingID": id,
         "name": name
     });
     console.log(response)
@@ -30,10 +29,9 @@ export const saveTopping = (name, id) => async dispatch => {
 
 };
 
-export const savePizza = (name, id, toppings) => async dispatch => {
+export const savePizza = (name, toppings) => async dispatch => {
     
     const response = await axios.post(`http://localhost:63764/api/Pizzas`,{
-        "PizzaID": id,
         "Name": name,
         "Toppings": toppings 
     });

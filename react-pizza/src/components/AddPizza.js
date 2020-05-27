@@ -15,7 +15,6 @@ class AddPizza extends React.Component {
         super(props);
         this.state= {
             name: '',
-            maxId: 0, 
             toppings: []
         }
     }
@@ -29,11 +28,6 @@ class AddPizza extends React.Component {
         this.setState({
             name: e.target.value
         })
-
-        if(this.props.pizzas.length > 0)
-        this.setState({
-            maxId: this.props.pizzas[this.props.pizzas.length-1].PizzaID + 1
-        }); 
     }
 
     validate = (e) => {
@@ -41,7 +35,7 @@ class AddPizza extends React.Component {
         if(this.state.name.trim().length == 0)
             alert("El nombre no puede estar vacío")
         
-        this.props.savePizza(this.state.name, this.state.maxId, this.state.toppings);
+        this.props.savePizza(this.state.name, this.state.toppings);
     }
 
     addTopping = (topping) => {
