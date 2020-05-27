@@ -121,6 +121,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005271523288_Initial.cs" />
+    <Compile Include="Migrations\202005271523288_Initial.Designer.cs">
+      <DependentUpon>202005271523288_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Pizza.cs" />
     <Compile Include="Models\Topping.cs" />
@@ -141,6 +146,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202005271523288_Initial.resx">
+      <DependentUpon>202005271523288_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
