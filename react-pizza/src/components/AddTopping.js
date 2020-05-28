@@ -14,8 +14,7 @@ class AddTopping extends React.Component {
     constructor(props) {
         super(props);
         this.state= {
-            name: '',
-            maxId: 0
+            name: ''
         }
     }
 
@@ -27,11 +26,6 @@ class AddTopping extends React.Component {
         this.setState({
             name: e.target.value
         })
-
-        if(this.props.toppings.length > 0)
-        this.setState({
-            maxId: this.props.toppings[this.props.toppings.length-1].ToppingID + 1
-        }); 
     }
 
     validate = (e) => {
@@ -39,7 +33,7 @@ class AddTopping extends React.Component {
         if(this.state.name.trim().length == 0)
             alert("El nombre no puede estar vacío")
         
-        this.props.saveTopping(this.state.name, this.state.maxId)
+        this.props.saveTopping(this.state.name);
     }
 
     render() {
